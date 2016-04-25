@@ -23,11 +23,11 @@ var config = {
 		endpoint: endpoint.local,
 		port: 5000,
 		jwtSecret: 'localJwtSecret',
-		token: 'localhsot_web_token',
+		token: 'localhost_web_token',
 		morgan: 'REQ :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time',
 		twilio: {
-			account_sid: '',
-			auth_token: ''
+			account_sid: process.env.TWILIO_ACCOUNT_SID,
+			auth_token: process.env.TWILIO_AUTH_TOKEN
 		}
 	},
 
