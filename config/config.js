@@ -23,7 +23,12 @@ var config = {
 		endpoint: endpoint.local,
 		port: 5000,
 		jwtSecret: 'localJwtSecret',
-		morgan: 'REQ :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time'
+		token: 'localhsot_web_token',
+		morgan: 'REQ :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time',
+		twilio: {
+			account_sid: '',
+			auth_token: ''
+		}
 	},
 
 	// Heroku configuration parameters
@@ -32,7 +37,12 @@ var config = {
 		endpoint: endpoint.heroku,
 		port: process.env.PORT,
 		jwtSecret: process.env.JWT_SECRET,
-		morgan: 'REQ :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time'
+		token: process.env.VOIP_TOKEN,
+		morgan: 'REQ :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time',
+		twilio: {
+			account_sid: process.env.TWILIO_ACCOUNT_SID,
+			auth_token: process.env.TWILIO_AUTH_TOKEN
+		}
 	}
 };
 

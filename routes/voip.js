@@ -11,8 +11,12 @@
 
 // Requires
 var router = require('express').Router();
+
+var auth = require('../controllers/auth');
 var voip = require('../controllers/voip');
 
-
+router.route('/call_token')
+	//GET - Return a token to do and receive VoIP calls
+	.get(auth.checkApiToken, auth.checkUserToken, voip.getCallToken);
 
 module.exports = router;
