@@ -21,7 +21,7 @@ var config = {
 	local: {
 		mode: 'local',
 		endpoint: endpoint.local,
-		port: 5000,
+		port: 3200,
 		jwtSecret: 'localJwtSecret',
 		token: 'localhost_web_token',
 		morgan: 'REQ :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time',
